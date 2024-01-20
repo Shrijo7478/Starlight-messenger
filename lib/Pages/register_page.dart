@@ -26,12 +26,21 @@ class _RegisterPageState extends State<RegisterPage> {
       );
       return;
     }
-    final AuthService authService = Provider.of<AuthService>(context, listen: false);
+    final AuthService authService =
+        Provider.of<AuthService>(context, listen: false);
     try {
       await authService.signUpWithEmailPassword(
-          emailController.text, passwordController.text,);
+        emailController.text,
+        passwordController.text,
+      );
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString(),),),);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            e.toString(),
+          ),
+        ),
+      );
     }
   }
 
