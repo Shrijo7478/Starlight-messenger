@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419717344316",
+    "project_id": "starlight-eae36",
+    "storage_bucket": "starlight-eae36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419717344316:android:89693cfa64e9727f97e739",
+        "android_client_info": {
+          "package_name": "com.example.starlight_messenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkyKU4rgdboPbQb0YzFHOoE2N11LW7-8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
