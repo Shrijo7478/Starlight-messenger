@@ -5,7 +5,8 @@ import 'package:starlight_messenger/components/my_text_fields.dart';
 import 'package:starlight_messenger/services/auth/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key, required void Function() onTap});
+  final void Function()? onTap;
+  const RegisterPage({super.key, required this.onTap});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -77,15 +78,18 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(height: 25),
                   MyButton(onTap: signUp, text: "Sign Up"),
                   const SizedBox(height: 50),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Already a Member?'),
-                      SizedBox(width: 4),
-                      Text(
-                        'Login now',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                      const Text('Already a Member?'),
+                      const SizedBox(width: 4),
+                      GestureDetector(
+                        onTap: widget.onTap,
+                        child: const Text(
+                          'Login now',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       )
                     ],
