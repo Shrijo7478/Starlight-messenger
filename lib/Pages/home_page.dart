@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Starlight Messenger'),
+        backgroundColor: Colors.blue[200],
         actions: [
           IconButton(
             onPressed: signOut,
@@ -59,7 +60,15 @@ class _HomePageState extends State<HomePage> {
 
     if (_auth.currentUser!.email != data['email']) {
       return ListTile(
-        title: Text(data['email']),
+        title: Text(
+          data['email'],
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
+        ),
+        trailing: const Icon(Icons.arrow_forward),
+        leading: const Icon(Icons.person),
         onTap: () {
           Navigator.push(
             context,

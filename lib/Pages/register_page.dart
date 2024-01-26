@@ -57,13 +57,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   const SizedBox(height: 50),
                   Icon(
-                    Icons.message,
+                    Icons.send_rounded,
                     size: 100,
                     color: Colors.grey[800],
                   ),
                   const SizedBox(height: 50),
                   const Text(
-                    "Let's create an account for you",
+                    "Let's create an account",
                     style: TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 25),

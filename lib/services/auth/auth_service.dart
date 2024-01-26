@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:starlight_messenger/services/auth/end_to_end.dart';
 
 class AuthService extends ChangeNotifier {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -15,6 +16,8 @@ class AuthService extends ChangeNotifier {
         email: email,
         password: password,
       );
+      String encryptedEmail = EncryptionService.encrypt(email, 'yourEncryptionKey');
+      
       _fireStore.collection('users').doc(userCredential.user!.uid).set(
         {
           'uid': userCredential.user!.uid,
@@ -44,5 +47,11 @@ class AuthService extends ChangeNotifier {
 
   Future<void> signOut() async {
     return await FirebaseAuth.instance.signOut();
+  }
+
+  String decryptUserData(Map<String, dynamic> userData) {
+    String encryptedEmail = userData['email'];
+    String decryptedEmail = EncryptionService.decrypt(encryptedEmail, 'yourEncryptionKey');
+    return decryptedEmail;
   }
 }

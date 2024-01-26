@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   const SizedBox(height: 50),
                   Icon(
-                    Icons.message,
+                    Icons.send_rounded,
                     size: 100,
                     color: Colors.grey[800],
                   ),
